@@ -1,11 +1,15 @@
 package com.dedovich.localization.data.model;
 
 import com.dedovich.localization.data.i18n.generified.TranslatedText;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
 @Entity

@@ -1,11 +1,15 @@
 package com.dedovich.localization.data.i18n.simplified;
 
 import com.dedovich.localization.data.i18n.generified.Language;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
 @Entity
