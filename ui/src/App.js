@@ -7,7 +7,7 @@ import {Book} from "./components/Book";
 import {Product} from "./components/Product";
 
 function App() {
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState(undefined);
     const [books, setBooks] = useState([]);
     const [products, setProducts] = useState([]);
     const {t, i18n} = useTranslation();
@@ -41,10 +41,14 @@ function App() {
             <h1>{t("helloWorld")}</h1>
 
             <h2>{t("books")}</h2>
-            {books.map(book => <Book key={book.id} name={book.name.translations[language]} author={book.author.translations[language]}/>)}
+            {books.map(book => <Book key={book.id}
+                                     name={language ? book.name.translations[language] : book.name.defaultValue}
+                                     author={language ? book.author.translations[language] : book.author.defaultValue}/>)}
 
             <h2>{t("products")}</h2>
-            {products.map(product => <Product key={product.id} name={product.translations[language].name} description={product.translations[language].description}/>)}
+            {products.map(product => <Product key={product.id}
+                                              name={language ? product.translations[language].name : ''}
+                                              description={language ? product.translations[language].description : ''}/>)}
         </div>
     );
 }

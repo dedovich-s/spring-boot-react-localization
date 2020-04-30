@@ -71,11 +71,13 @@ public class DataLoader implements CommandLineRunner {
                 .author(
                         TranslatedText.builder()
                                 .translations(authorTranslations)
+                                .defaultValue("Default author")
                                 .build()
                 )
                 .name(
                         TranslatedText.builder()
                                 .translations(nameTranslations)
+                                .defaultValue("Default name")
                                 .build()
                 )
                 .build();

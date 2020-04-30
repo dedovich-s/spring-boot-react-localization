@@ -22,6 +22,8 @@ public class TranslatedText {
     @Id
     private Long id;
 
+    private String defaultValue;
+
     @Cascade(CascadeType.ALL)
     @ElementCollection(targetClass = java.lang.String.class, fetch = FetchType.EAGER)
     @MapKeyJoinColumn(name = "language_id")
